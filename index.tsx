@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BookOpen, Gamepad2, Home, Star, ChevronRight, ChevronLeft, CheckCircle, XCircle, Trophy, MapPin, Bus, Tent } from 'lucide-react';
@@ -39,12 +38,12 @@ const TOPICS: TopicData[] = [
       {
         title: '如何詢問交通方式?',
         content: (
-          <div className="space-y-2">
-            <p>句型公式：</p>
-            <div className="bg-white/20 p-3 rounded-lg font-mono text-sm md:text-base">
+          <div className="space-y-4">
+            <p className="text-slate-700 font-bold">句型公式：</p>
+            <div className="bg-blue-50 border border-blue-200 p-3 rounded-lg text-blue-900 font-mono text-sm md:text-base shadow-sm">
               How + do/does/did + 主詞 + go/get to + 地點?
             </div>
-            <p className="text-sm mt-2">✨ 記得：如果是問 <b>How can...?</b> 助動詞就用 can 哦！</p>
+            <p className="text-sm mt-2 text-slate-600">✨ 記得：如果是問 <b>How can...?</b> 助動詞就用 can 哦！</p>
           </div>
         ),
         example: "How can we get to the metro station? (我們如何到捷運站呢？)"
@@ -53,16 +52,16 @@ const TOPICS: TopicData[] = [
         title: '搭乘方式：By vs In/On',
         content: (
           <div className="space-y-4">
-            <div className="bg-white/10 p-2 rounded">
-              <strong className="block text-yellow-200">方法 A: by + 交通工具</strong>
-              <span className="text-sm">⚠️ 絕對不加 a/an/the！用單數！</span>
-              <div className="text-xs mt-1">Ex: by bus, by car, by train</div>
+            <div className="bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <strong className="block text-indigo-600 text-lg mb-1">方法 A: by + 交通工具</strong>
+              <span className="text-sm text-slate-600 block mb-1">⚠️ 絕對不加 a/an/the！用單數！</span>
+              <div className="text-xs bg-slate-100 p-1 rounded inline-block text-slate-500">Ex: by bus, by car, by train</div>
             </div>
-            <div className="bg-white/10 p-2 rounded">
-              <strong className="block text-yellow-200">方法 B: in/on + 冠詞 + 交通工具</strong>
-              <ul className="text-sm list-disc pl-4 mt-1">
-                <li><b>on</b> a bus/train/bike (身體能站直/跨坐)</li>
-                <li><b>in</b> a car/taxi (要彎腰進去)</li>
+            <div className="bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <strong className="block text-indigo-600 text-lg mb-1">方法 B: in/on + 冠詞 + 交通工具</strong>
+              <ul className="text-sm list-disc pl-4 mt-1 text-slate-700 space-y-1">
+                <li><b className="text-pink-600">on</b> a bus / train / bike <span className="text-xs text-slate-500">(身體能站直/跨坐)</span></li>
+                <li><b className="text-pink-600">in</b> a car / taxi <span className="text-xs text-slate-500">(要彎腰進去)</span></li>
               </ul>
             </div>
           </div>
@@ -72,18 +71,22 @@ const TOPICS: TopicData[] = [
       {
         title: '動詞大亂鬥：Take, Ride, Drive, Fly',
         content: (
-          <div className="grid grid-cols-2 gap-2 text-sm">
-            <div className="bg-white/10 p-2 rounded">
-              <span className="text-xl">🚌</span> <b>take</b>: 搭乘 (bus, train, taxi, metro)
+          <div className="grid grid-cols-2 gap-3 text-sm">
+            <div className="bg-blue-50 border border-blue-100 p-3 rounded text-slate-700">
+              <span className="text-xl block mb-1">🚌</span> 
+              <b className="text-blue-700">take</b>: 搭乘 <br/><span className="text-xs text-slate-500">(bus, train, taxi, metro)</span>
             </div>
-            <div className="bg-white/10 p-2 rounded">
-              <span className="text-xl">🚲</span> <b>ride</b>: 騎 (bike, scooter, motorcycle)
+            <div className="bg-green-50 border border-green-100 p-3 rounded text-slate-700">
+              <span className="text-xl block mb-1">🚲</span> 
+              <b className="text-green-700">ride</b>: 騎 <br/><span className="text-xs text-slate-500">(bike, scooter, motorcycle)</span>
             </div>
-            <div className="bg-white/10 p-2 rounded">
-              <span className="text-xl">🚗</span> <b>drive</b>: 駕駛 (car, taxi)
+            <div className="bg-orange-50 border border-orange-100 p-3 rounded text-slate-700">
+              <span className="text-xl block mb-1">🚗</span> 
+              <b className="text-orange-700">drive</b>: 駕駛 <br/><span className="text-xs text-slate-500">(car, taxi)</span>
             </div>
-            <div className="bg-white/10 p-2 rounded">
-              <span className="text-xl">✈️</span> <b>fly</b>: 開飛機 (plane)
+            <div className="bg-purple-50 border border-purple-100 p-3 rounded text-slate-700">
+              <span className="text-xl block mb-1">✈️</span> 
+              <b className="text-purple-700">fly</b>: 開飛機 <br/><span className="text-xs text-slate-500">(plane)</span>
             </div>
           </div>
         ),
@@ -93,18 +96,18 @@ const TOPICS: TopicData[] = [
         title: '上下車要用哪一個?',
         content: (
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">🚕</span>
+            <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span className="text-2xl mt-1">🚕</span>
               <div>
-                <b>Get in / Get out of</b>
-                <p className="text-xs text-blue-100">適用：Car, Taxi (小車)</p>
+                <b className="text-lg text-slate-800">Get in / Get out of</b>
+                <p className="text-sm text-slate-500 mt-1">適用：Car, Taxi (空間小的車)</p>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">🚌</span>
+            <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+              <span className="text-2xl mt-1">🚌</span>
               <div>
-                <b>Get on / Get off</b>
-                <p className="text-xs text-blue-100">適用：Bus, Train, Plane, Boat (大車/板子)</p>
+                <b className="text-lg text-slate-800">Get on / Get off</b>
+                <p className="text-sm text-slate-500 mt-1">適用：Bus, Train, Plane, Boat (有甲板/走道)</p>
               </div>
             </div>
           </div>
@@ -148,18 +151,18 @@ const TOPICS: TopicData[] = [
       {
         title: 'Go + V-ing 公式',
         content: (
-          <div>
-            <p className="mb-4">當我們談論休閒活動時，最常用的句型就是：</p>
-            <div className="text-center text-2xl font-bold text-yellow-200 mb-4 animate-bounce">
+          <div className="w-full">
+            <p className="mb-4 text-slate-600 text-center">談論休閒活動最常用的句型：</p>
+            <div className="text-center text-3xl font-black text-emerald-600 mb-6 animate-bounce bg-emerald-50 py-4 rounded-xl border border-emerald-100">
               Go + V-ing
             </div>
-            <div className="grid grid-cols-2 gap-2 text-sm">
-              <div>⛺ go camping (去露營)</div>
-              <div>🎣 go fishing (去釣魚)</div>
-              <div>🛍️ go shopping (去購物)</div>
-              <div>🏄 go surfing (去衝浪)</div>
-              <div>🏃 go jogging (去慢跑)</div>
-              <div>🏊 go swimming (去游泳)</div>
+            <div className="grid grid-cols-2 gap-3 text-sm font-medium text-slate-700">
+              <div className="bg-white p-2 rounded border border-slate-100 shadow-sm">⛺ go camping <br/><span className="text-xs text-slate-400">去露營</span></div>
+              <div className="bg-white p-2 rounded border border-slate-100 shadow-sm">🎣 go fishing <br/><span className="text-xs text-slate-400">去釣魚</span></div>
+              <div className="bg-white p-2 rounded border border-slate-100 shadow-sm">🛍️ go shopping <br/><span className="text-xs text-slate-400">去購物</span></div>
+              <div className="bg-white p-2 rounded border border-slate-100 shadow-sm">🏄 go surfing <br/><span className="text-xs text-slate-400">去衝浪</span></div>
+              <div className="bg-white p-2 rounded border border-slate-100 shadow-sm">🏃 go jogging <br/><span className="text-xs text-slate-400">去慢跑</span></div>
+              <div className="bg-white p-2 rounded border border-slate-100 shadow-sm">🏊 go swimming <br/><span className="text-xs text-slate-400">去游泳</span></div>
             </div>
           </div>
         ),
@@ -169,16 +172,17 @@ const TOPICS: TopicData[] = [
         title: 'Go + 單數名詞 + V-ing',
         content: (
           <div>
-            <p className="mb-2">有些活動是「針對某個東西」去做的，中間要加名詞！</p>
-            <div className="bg-white/20 p-3 rounded-lg mb-3">
-              規則：Go + <span className="text-yellow-300 font-bold">單數名詞</span> + V-ing
-              <div className="text-xs mt-1">⚠️ 這裡的名詞前面不能加 a/the 哦！</div>
+            <p className="mb-2 text-slate-600">有些活動是「針對某個東西」去做的，中間要加名詞！</p>
+            <div className="bg-green-50 border border-green-200 p-4 rounded-lg mb-4 text-center">
+              <span className="text-slate-500">Rule: </span>
+              <span className="font-bold text-green-700 text-lg">Go + 單數名詞 + V-ing</span>
+              <div className="text-xs mt-2 text-red-500 font-bold bg-white inline-block px-2 py-1 rounded-full border border-red-100">⚠️ 名詞前不加 a/the</div>
             </div>
-            <ul className="space-y-2 text-sm">
-              <li>🐦 <b>go bird watching</b> (去賞鳥)</li>
-              <li>🐋 <b>go whale watching</b> (去賞鯨)</li>
-              <li>🧗 <b>go mountain climbing</b> (去爬山)</li>
-              <li>🐴 <b>go horseback riding</b> (去騎馬)</li>
+            <ul className="space-y-2 text-sm text-slate-700">
+              <li className="flex items-center gap-2 bg-white p-2 rounded border border-slate-100">🐦 <b>go bird watching</b> (去賞鳥)</li>
+              <li className="flex items-center gap-2 bg-white p-2 rounded border border-slate-100">🐋 <b>go whale watching</b> (去賞鯨)</li>
+              <li className="flex items-center gap-2 bg-white p-2 rounded border border-slate-100">🧗 <b>go mountain climbing</b> (去爬山)</li>
+              <li className="flex items-center gap-2 bg-white p-2 rounded border border-slate-100">🐴 <b>go horseback riding</b> (去騎馬)</li>
             </ul>
           </div>
         ),
@@ -188,11 +192,12 @@ const TOPICS: TopicData[] = [
         title: '只看不買? Window Shopping',
         content: (
           <div className="text-center space-y-4">
-            <div className="text-6xl">👀</div>
-            <h3 className="text-xl font-bold">go window shopping</h3>
-            <p>意思是「去逛街(只看不買)」。</p>
-            <p className="text-sm bg-white/10 p-2 rounded">
-              想像你是隔著櫥窗 (window) 在看商品，所以叫 window shopping！
+            <div className="text-6xl animate-pulse">👀</div>
+            <h3 className="text-2xl font-black text-slate-800">go window shopping</h3>
+            <p className="text-slate-500">意思是「去逛街(只看不買)」。</p>
+            <p className="text-sm bg-indigo-50 text-indigo-800 p-4 rounded-xl border border-indigo-100">
+              💡 記憶小撇步：<br/>
+              想像你是隔著櫥窗 (window) 在看商品，<br/>所以叫 window shopping！
             </p>
           </div>
         ),
@@ -229,15 +234,25 @@ const TOPICS: TopicData[] = [
       {
         title: '如何問路?',
         content: (
-          <div className="space-y-3">
-            <p>記得先說 <b>Excuse me</b> (不好意思) 表示禮貌！</p>
-            <ul className="space-y-2 bg-white/10 p-3 rounded text-sm">
-              <li>❓ <b>Where is</b> the bank?</li>
-              <li>❓ <b>How can I get to</b> the station?</li>
-              <li>❓ <b>Which is the way to</b> the market?</li>
-              <li>❓ <b>Could you tell me the way to</b>...?</li>
+          <div className="space-y-4 w-full">
+            <div className="bg-amber-50 border border-amber-200 p-3 rounded-lg text-amber-800 text-center text-sm font-bold">
+              🙋 先說 "Excuse me" 表示禮貌！
+            </div>
+            <ul className="space-y-2 text-sm text-slate-700">
+              <li className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
+                ❓ <b>Where is</b> the bank?
+              </li>
+              <li className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
+                ❓ <b>How can I get to</b> the station?
+              </li>
+              <li className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
+                ❓ <b>Which is the way to</b> the market?
+              </li>
+              <li className="bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
+                ❓ <b>Could you tell me the way to</b>...?
+              </li>
             </ul>
-            <p className="text-xs text-yellow-100">💡 記得：get there / get here 前面不用加 to 喔！</p>
+            <p className="text-xs text-amber-600 font-bold text-center">💡 小提醒：get there / get here 前面不用加 to 喔！</p>
           </div>
         ),
         example: "Excuse me, how do I get to the night market from here?"
@@ -245,18 +260,38 @@ const TOPICS: TopicData[] = [
       {
         title: '方位介系詞 (在哪裡?)',
         content: (
-          <div className="grid grid-cols-1 gap-2 text-sm">
-            <div className="flex items-center gap-2 bg-white/10 p-2 rounded">
-              <span className="font-bold w-24">across from</span> 在...對面
+          <div className="grid grid-cols-1 gap-2 text-sm w-full">
+            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded min-w-[100px] text-center">across from</span> 
+              <span className="text-slate-600">在...對面</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 p-2 rounded">
-              <span className="font-bold w-24">next to</span> 在...隔壁
+            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded min-w-[100px] text-center">next to</span> 
+              <span className="text-slate-600">在...隔壁</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 p-2 rounded">
-              <span className="font-bold w-24">between A and B</span> 在A與B之間
+            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded min-w-[100px] text-center">between</span> 
+              <span className="text-slate-600">在...之間 (A and B)</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 p-2 rounded">
-              <span className="font-bold w-24">on the corner of</span> 在...轉角
+            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded min-w-[100px] text-center">in front of</span> 
+              <span className="text-slate-600">在...前面</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded min-w-[100px] text-center">in back of</span> 
+              <span className="text-slate-600">在...後面</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded min-w-[100px] text-center">on the corner</span> 
+              <span className="text-slate-600">在...轉角</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded min-w-[100px] text-center">in the middle of</span> 
+              <span className="text-slate-600">在...中間</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white border border-slate-200 p-3 rounded-lg shadow-sm">
+              <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded min-w-[100px] text-center">on the left / right</span> 
+              <span className="text-slate-600">在左邊 / 右邊</span>
             </div>
           </div>
         ),
@@ -265,18 +300,34 @@ const TOPICS: TopicData[] = [
       {
         title: '指引方向 (怎麼走?)',
         content: (
-          <div className="space-y-2 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="text-xl">⬆️</span> <b>Go straight / Go along</b> (直走/沿著走)
+          <div className="space-y-3 text-sm w-full">
+            <div className="flex items-center gap-3 bg-white p-3 rounded border border-slate-100">
+              <span className="text-2xl">⬆️</span> 
+              <div>
+                <b className="text-slate-800">Go straight / Go along</b>
+                <p className="text-slate-500 text-xs">直走 / 沿著走</p>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl">↩️</span> <b>Turn left / Make a left turn</b> (左轉)
+            <div className="flex items-center gap-3 bg-white p-3 rounded border border-slate-100">
+              <span className="text-2xl">↩️</span> 
+              <div>
+                <b className="text-slate-800">Turn left</b>
+                <p className="text-slate-500 text-xs">左轉 (Make a left turn)</p>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl">↪️</span> <b>Turn right</b> (右轉)
+            <div className="flex items-center gap-3 bg-white p-3 rounded border border-slate-100">
+              <span className="text-2xl">↪️</span> 
+              <div>
+                <b className="text-slate-800">Turn right</b>
+                <p className="text-slate-500 text-xs">右轉 (Make a right turn)</p>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl">🦓</span> <b>Cross the street</b> (過馬路)
+            <div className="flex items-center gap-3 bg-white p-3 rounded border border-slate-100">
+              <span className="text-2xl">🦓</span> 
+              <div>
+                <b className="text-slate-800">Cross the street</b>
+                <p className="text-slate-500 text-xs">過馬路</p>
+              </div>
             </div>
           </div>
         ),
@@ -359,12 +410,12 @@ const HomeView = ({ onSelectTopic }: { onSelectTopic: (t: TopicData) => void }) 
               {topic.icon}
             </div>
             <div className="relative z-10 flex items-center gap-4 text-white">
-              <div className="p-3 bg-white/20 rounded-full backdrop-blur-sm">
+              <div className="p-3 bg-white/20 rounded-full backdrop-blur-sm shadow-inner">
                 {topic.icon}
               </div>
               <div className="text-left">
                 <h2 className="text-xl font-bold">{topic.title}</h2>
-                <p className="text-white/80 text-sm">Start Learning →</p>
+                <p className="text-white/80 text-sm font-medium">Start Learning →</p>
               </div>
             </div>
           </button>
@@ -385,7 +436,7 @@ const TopicView = ({ topic, onBack }: { topic: TopicData; onBack: () => void }) 
     <div className="min-h-screen flex flex-col bg-slate-50">
       {/* Header */}
       <div 
-        className="p-4 flex items-center justify-between shadow-md z-10 sticky top-0"
+        className="p-4 flex items-center justify-between shadow-md z-10 sticky top-0 transition-colors"
         style={{ backgroundColor: topic.color }}
       >
         <button 
@@ -453,7 +504,7 @@ const LearnModule = ({ topic }: { topic: TopicData }) => {
     <div className="flex flex-col h-full items-center justify-center">
       <div className="w-full aspect-[4/5] md:aspect-video bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col relative border-4" style={{ borderColor: topic.color }}>
         {/* Progress Bar */}
-        <div className="absolute top-0 left-0 w-full h-2 bg-slate-100">
+        <div className="absolute top-0 left-0 w-full h-2 bg-slate-100 z-10">
           <div 
             className="h-full transition-all duration-300"
             style={{ 
@@ -464,11 +515,11 @@ const LearnModule = ({ topic }: { topic: TopicData }) => {
         </div>
 
         {/* Content */}
-        <div className="flex-1 p-8 flex flex-col justify-center items-center text-center overflow-y-auto">
-          <h3 className="text-2xl font-black mb-6" style={{ color: topic.color }}>
+        <div className="flex-1 p-6 md:p-8 flex flex-col justify-start md:justify-center items-center text-center overflow-y-auto w-full">
+          <h3 className="text-2xl font-black mb-6 mt-4 md:mt-0" style={{ color: topic.color }}>
             {currentLesson.title}
           </h3>
-          <div className="text-slate-600 font-medium leading-relaxed w-full">
+          <div className="text-slate-600 font-medium leading-relaxed w-full flex-1 flex flex-col items-center justify-center">
             {currentLesson.content}
           </div>
         </div>
@@ -476,7 +527,7 @@ const LearnModule = ({ topic }: { topic: TopicData }) => {
         {/* Example Footer */}
         <div className="bg-slate-50 p-6 border-t border-slate-100">
           <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Example</div>
-          <p className="font-serif italic text-slate-700 text-lg">"{currentLesson.example}"</p>
+          <p className="font-serif italic text-slate-700 text-lg leading-snug">"{currentLesson.example}"</p>
         </div>
       </div>
 
@@ -543,15 +594,15 @@ const QuizModule = ({ topic }: { topic: TopicData }) => {
 
   if (isFinished) {
     return (
-      <div className="flex flex-col items-center justify-center h-full bg-white rounded-3xl shadow-xl p-8 text-center animate-fade-in">
-        <div className="w-24 h-24 rounded-full bg-yellow-100 flex items-center justify-center mb-6 text-yellow-500 animate-bounce">
+      <div className="flex flex-col items-center justify-center h-full bg-white rounded-3xl shadow-xl p-8 text-center animate-fade-in border-4 border-slate-50">
+        <div className="w-24 h-24 rounded-full bg-yellow-100 flex items-center justify-center mb-6 text-yellow-500 animate-bounce shadow-inner">
           <Trophy size={48} />
         </div>
         <h2 className="text-3xl font-black text-slate-800 mb-2">恭喜完成!</h2>
         <p className="text-slate-500 mb-8">你完成了 {topic.title} 的挑戰</p>
         
-        <div className="text-5xl font-black mb-2" style={{ color: topic.color }}>
-          {score} / {topic.quiz.length}
+        <div className="text-6xl font-black mb-2 tracking-tight" style={{ color: topic.color }}>
+          {score} <span className="text-3xl text-slate-300">/</span> {topic.quiz.length}
         </div>
         <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Score</p>
 
@@ -590,15 +641,15 @@ const QuizModule = ({ topic }: { topic: TopicData }) => {
       {/* Options */}
       <div className="space-y-3 flex-1">
         {currentQ.options.map((opt, i) => {
-          let stateStyles = 'bg-white border-2 border-slate-100 text-slate-600 hover:border-indigo-200';
+          let stateStyles = 'bg-white border-2 border-slate-100 text-slate-600 hover:border-indigo-200 hover:bg-slate-50';
           let icon = null;
 
           if (showResult) {
             if (i === currentQ.correctIndex) {
-              stateStyles = 'bg-green-50 border-2 border-green-400 text-green-700';
+              stateStyles = 'bg-green-50 border-2 border-green-500 text-green-700';
               icon = <CheckCircle size={20} className="text-green-500" />;
             } else if (i === selectedOption) {
-              stateStyles = 'bg-red-50 border-2 border-red-400 text-red-700';
+              stateStyles = 'bg-red-50 border-2 border-red-500 text-red-700';
               icon = <XCircle size={20} className="text-red-500" />;
             } else {
               stateStyles = 'bg-slate-50 border-2 border-transparent text-slate-300 opacity-50';
@@ -622,8 +673,8 @@ const QuizModule = ({ topic }: { topic: TopicData }) => {
       {/* Feedback & Next */}
       {showResult && (
         <div className="mt-6 animate-fade-in-up">
-          <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 mb-4 border border-blue-100">
-            <span className="font-bold mr-1">💡 詳解：</span>
+          <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 mb-4 border border-blue-100 shadow-sm">
+            <span className="font-bold mr-1 block mb-1">💡 詳解：</span>
             {currentQ.explanation}
           </div>
           <button 
